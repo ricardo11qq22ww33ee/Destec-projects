@@ -45,6 +45,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -56,6 +57,21 @@
   <?php include("screens/sidebar.php") ?>
   <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p>
   
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="index.php"><?php echo $last_name[0][0] ?></a>
+        </div>
+        <div >
+
+        </div>
+
+      </div>
+    </header>
+  </div>
+
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
