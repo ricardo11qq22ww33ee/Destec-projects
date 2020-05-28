@@ -9,14 +9,11 @@
   $name = $_SESSION['name'];
   $last_name = $_SESSION['last_name'];
 
-	
-	if($id_usuario == 0){		
-		header( "Location:user/logout.php" );
+  if($id_usuario == 0){		
+		header( "Location:../user/logout.php" );
 	}
-	//-----------------------------
-	
-	
-
+  //-----------------------------
+  
 ?>
 
 <!doctype html>
@@ -35,8 +32,10 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -45,7 +44,25 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Destec-projects/css/ivm.css">
+  <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+  </style> 
 </head>
 
 <body>
@@ -55,22 +72,75 @@
 
   <!-- Add your site or application content here -->
   <?php include("screens/sidebar.php") ?>
-  <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p>
+  <!-- <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p> -->
   
   <div class="container">
-    <header class="blog-header py-3">
+    <header class="blog-header py-3 line-separator">
       <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="text-muted" href="#">Projects</a>
+        </div>
         <div class="col-4 text-center">
-          <a class="blog-header-logo text-dark" href="index.php"><?php echo $last_name[0][0] ?></a>
+          <a class="blog-header-logo text-dark" href="index.php"> Hello <?php echo $name[0][0] ?></a>
         </div>
-        <div >
-
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="text-muted" href="#" aria-label="Plus">
+            <img class="mb-4" src="https://image.flaticon.com/icons/svg/1828/1828930.svg" width="20" height="20" fill="none" stroke="currentColor">
+          </a>
         </div>
-
       </div>
     </header>
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">Algo</a>
+        <a class="p-2 text-muted" href="#">Algo2</a>
+        <a class="p-2 text-muted" href="#">Algo3</a>
+        <a class="p-2 text-muted" href="#">Algo4</a>
+        <a class="p-2 text-muted" href="#">Algo5</a>
+        <a class="p-2 text-muted" href="#">Algo6</a>
+      </nav>
+    </div>
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">Project On Going: *Insertar php para nombre del proyecto* </h1>
+        <p class="lead my-3">
+          The Project: *Insert Project from php*, was requested by the Company: *Insert company name from php*.
+          *Insert name of project* consists of a web page project whose motive is to implement a high level landing page 
+          for the company. 
+        </p>
+        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Go To Project</a></p>
+      </div>
+    </div>
+    <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">*Actividad Control php*</strong>
+          <h3 class="mb-0">Featured Releases</h3>
+          <div class="mb-1 text-muted">*Insert date of release php*</div>
+          <p class="card-text mb-auto">There was a step back in the Control ctegory.Important roadblock in a task.</p>
+          <a href="#" class="stretched-link">Go to Control</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">*Actividad Design php*</strong>
+          <h3 class="mb-0">Featured Releases</h3>
+          <div class="mb-1 text-muted">*Insert date of release php*</div>
+          <p class="mb-auto">There was an update in the Design ctegory. We finished a main task.</p>
+          <a href="#" class="stretched-link">Go to Design</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
   </div>
-
 
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
