@@ -16,24 +16,18 @@
 	}
 	//-----------------------------
 	
-	if(isset($_POST['actualizar'])){
-		if($_POST['actualizar']){
 			$activity = $_POST['id_activity'];
 			$status = $_POST['status'];
 			if( updateStatusActivity($status, $activity)){
-                redirect("index.php?id_project='.$id_project.'");
 				echo'<script type="text/javascript">
-		alert("Actividad actualizada");
+		alert("Actividad actualizada '.$id_project.'");
         </script>';
-        
+        header("location:index.php?id_project=$id_project");
 			}else{
-                redirect("index.php?id_project='.$id_project.'");
+                header("location:index.php?id_project='.$id_project.'");
 				echo'<script type="text/javascript">
 		alert("Error al actualizar actividad");
 		</script>';
 			}
-			
-		}
-	}
-
+		
 ?>

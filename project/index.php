@@ -93,7 +93,7 @@
 <br>
 <br>
 <br>
-<h3> Activades </h3>
+<h3 class='text-center'> Activades </h3>
 <?php echo getActivityList($id_project); ?>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
