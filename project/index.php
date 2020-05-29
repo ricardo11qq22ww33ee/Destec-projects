@@ -78,8 +78,8 @@
         <a class="p-2 text-muted" href="../production/addParts.php">Add Parts</a>
         <a class="p-2 text-muted" href="../project/activitylist.php">On Going Activities</a>
         <a class="p-2 text-muted" href="../project/addActivity.php">Add Activity</a>
-        <a class="p-2 text-muted" href="purchases/purchasesList.php">Purchases</a>
-        <a class="p-2 text-muted" href="purchases/addPurchases.php">Make a Purchase</a>
+        <a class="p-2 text-muted" href="../purchases/purchasesList.php">Purchases</a>
+        <a class="p-2 text-muted" href="../purchases/addPurchases.php">Make a Purchase</a>
       </nav>
     </div>
   
