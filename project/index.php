@@ -96,7 +96,7 @@
       <nav class="nav d-flex justify-content-between">
         <a class="p-2 text-muted" href="../production/index.php">Existing Parts</a>
         <a class="p-2 text-muted" href="../production/addParts.php">Add Parts</a>
-        <a class="p-2 text-muted" href="../project/activitylist.php">On Going Activities</a>
+        <a class="p-2 text-muted" href="../project/activitylist.php?id_project=<?php echo $id_project; ?>">On Going Activities</a>
         <a class="p-2 text-muted" href="../project/addActivity.php">Add Activity</a>
         <a class="p-2 text-muted" href="../purchases/purchasesList.php">Purchases</a>
         <a class="p-2 text-muted" href="../purchases/addPurchases.php">Make a Purchase</a>
@@ -126,13 +126,12 @@
 <br>
 <br>
 <h3 class='text-center'> Activades </h3>
-<?php echo getActivityList($id_project); ?>
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+   Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
