@@ -2,8 +2,8 @@
 	$servername = "localhost";
 	//$username = "wwwplust_demo";
 	//$password = "DiR531";
-	$username = "sqlmdp";
-	$password = "sqlmdp123";
+	$username = "sqldmp";
+	$password = "sqldmp123";
 	$dbname = "equipo4";
 
 	function sqlSelect($sql){
