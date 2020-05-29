@@ -81,7 +81,7 @@
           <H1 class="blog-header-logo text-dark text-center" href="index.php"> Hello <?php echo $name[0][0] ?></h1>
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
-          <a class="text-muted" href="#" aria-label="Plus">
+          <a class="text-muted" href="screens/form.php" aria-label="Plus">
             <img class="mb-4" src="https://image.flaticon.com/icons/svg/1828/1828930.svg" width="20" height="20" fill="none" stroke="currentColor">
           </a>
         </div>
@@ -90,13 +90,10 @@
     <hr class="mb-4">
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">Project On Going: *Insertar php para nombre del proyecto* </h1>
+        <h1 class="display-4 font-italic">Project On Going today <?php echo date('y-m-d') ?> </h1>
         <p class="lead my-3">
-          The Project: *Insert Project from php*, was requested by the Company: *Insert company name from php*.
-          *Insert name of project* consists of a web page project whose motive is to implement a high level landing page 
-          for the company. 
+          This platform is made for a company Destec, which help to control the automatiation projects, in the part of activities, production and purchases.
         </p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Go To Project</a></p>
       </div>
     </div>
     <div class="row mb-2">

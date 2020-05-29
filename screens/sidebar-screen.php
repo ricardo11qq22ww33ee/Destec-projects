@@ -8,7 +8,7 @@ echo
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">Destec</a>
+        <a href="../">Destec</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -34,7 +34,7 @@ echo
           
           <li class="sidebar-dropdown">
           <a href="#">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-chart-line"></i>
               <span>Dashboard</span>
             </a>
             <div class="sidebar-submenu">';
@@ -45,10 +45,16 @@ echo
 
           <li class="sidebar-dropdown">
           <a href="#">
-              <i class="fa fa-shopping-cart"></i>
+          <i class="fas fa-wrench"></i>
               <span>Production</span>
             </a>
             <div class="sidebar-submenu">';
+            echo
+             "<ul>
+             <li>
+	          <a href='../production/productionGeneral.php'>General</a>
+			      </li>
+		        </ul>";
             echo getProductionListScreen();
             echo'
             </div>
@@ -56,38 +62,26 @@ echo
 
           <li class="sidebar-dropdown">
             <a href="#">
-              <i class="far fa-gem"></i>
+              <i class="fa fa-shopping-cart"></i>
               <span>Purchases</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">General</a>
+                  <a href="../purchases/purchasesGeneral.php">General</a>
                 </li>
-              </ul>
-            </div>
+              </ul>';
+              echo getPurchasesListScreen();
+            echo'</div>
           </li>
 
           <li class="header-menu">
-            <span>Extra</span>
+            <span>Admin</span>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-book"></i>
-              <span>Documentation</span>
-              <span class="badge badge-pill badge-primary">Beta</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
+              <i class="fa fa-cog"></i>
+              <span>Settings</span>
             </a>
           </li>
         </ul>
@@ -96,18 +90,6 @@ echo
     </div>
     <!-- sidebar-content  -->
     <div class="sidebar-footer">
-      <a href="#">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-cog"></i>
-        <span class="badge-sonar"></span>
-      </a>
       <a href="../user/logout.php">
         <i class="fa fa-power-off"></i>
       </a>

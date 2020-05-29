@@ -165,7 +165,34 @@
 		
 		return $html;
 	}
+	function getPurchasesList(){
+		$sql = "SELECT id_project FROM project";
+		$id_projects = sqlSelect($sql);
 
+		$html = "<ul>";
+		foreach( $id_projects as $id_project ){
+			$name = getNameProject($id_project[0]);
+			$html .= "<li>";
+			$html .= "<a href='purchases/purchasesList.php?id_project=".$id_project[0]."'>".$name[0][0]."</a>";
+			$html .= "</li>";
+		}
+		$html .= "</ul>";
+		return $html;
+	}
+	function getPurchasesListScreen(){
+		$sql = "SELECT id_project FROM project";
+		$id_projects = sqlSelect($sql);
+
+		$html = "<ul>";
+		foreach( $id_projects as $id_project ){
+			$name = getNameProject($id_project[0]);
+			$html .= "<li>";
+			$html .= "<a href='../purchases/purchasesList.php?id_project=".$id_project[0]."'>".$name[0][0]."</a>";
+			$html .= "</li>";
+		}
+		$html .= "</ul>";
+		return $html;
+	}
 	function getProductionList(){
 		$sql = "SELECT id_project FROM project";
 		$id_projects = sqlSelect($sql);
