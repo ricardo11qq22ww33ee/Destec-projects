@@ -88,16 +88,18 @@
 
   <!-- Add your site or application content here -->
   <?php include("../screens/sidebar-screen.php") ?>
-
+  <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="index.php"> Hello <?php echo $name[0][0] ?></a>
+        </div>
   <hr class="mb-4">
-    <div class="nav-scroller py-1 mb-2">
+  <div class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">Algo</a>
-        <a class="p-2 text-muted" href="#">Algo2</a>
-        <a class="p-2 text-muted" href="#">Algo3</a>
-        <a class="p-2 text-muted" href="#">Algo4</a>
-        <a class="p-2 text-muted" href="#">Algo5</a>
-        <a class="p-2 text-muted" href="#">Algo6</a>
+        <a class="p-2 text-muted" href="../production/index.php">Existing Parts</a>
+        <a class="p-2 text-muted" href="../production/addParts.php">Add Parts</a>
+        <a class="p-2 text-muted" href="../project/activitylist.php">On Going Activities</a>
+        <a class="p-2 text-muted" href="../project/addActivity.php">Add Activity</a>
+        <a class="p-2 text-muted" href="../purchases/purchasesList.php">Purchases</a>
+        <a class="p-2 text-muted" href="../purchases/addPurchases.php">Make a Purchase</a>
       </nav>
     </div>
   
@@ -109,7 +111,7 @@
   <?php echo getWeeks($id_project); ?>
   <?php echo getActivity($id_project); ?>
 </div>
-
+<!-- 
 <br>
 <br>
 <br>
@@ -130,7 +132,7 @@
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
 </body>
 
 </html>
