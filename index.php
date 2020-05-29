@@ -91,16 +91,6 @@
       </div>
     </header>
     <hr class="mb-4">
-    <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">Algo</a>
-        <a class="p-2 text-muted" href="#">Algo2</a>
-        <a class="p-2 text-muted" href="#">Algo3</a>
-        <a class="p-2 text-muted" href="#">Algo4</a>
-        <a class="p-2 text-muted" href="#">Algo5</a>
-        <a class="p-2 text-muted" href="#">Algo6</a>
-      </nav>
-    </div>
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">Project On Going: *Insertar php para nombre del proyecto* </h1>
