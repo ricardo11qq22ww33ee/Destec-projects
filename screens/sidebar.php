@@ -68,14 +68,14 @@ echo
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="purchases/purchasesGeneral.php">General</a>
+                  <a href="purchases/purchaseGeneral.php">General</a>
                 </li>
               </ul>';
               echo getPurchasesList();
             echo '</div>
           </li>
           <li class="header-menu">
-            <span>Amdin</span>
+            <span>Admin</span>
           </li>
           <li>
             <a href="#">

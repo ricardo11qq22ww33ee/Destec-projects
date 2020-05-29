@@ -10,7 +10,7 @@
   $last_name = $_SESSION['last_name'];
 
   if($id_usuario == 0){		
-		header( "Location:../user/logout.php" );
+		header( "Location:user/logout.php" );
 	}
   //-----------------------------
   
@@ -90,7 +90,7 @@
     <hr class="mb-4">
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">Project On Going today <?php echo date('y-m-d') ?> </h1>
+        <h1 class="display-4 font-italic">Projects On Going today <?php echo date('y-m-d') ?> </h1>
         <p class="lead my-3">
           This platform is made for a company Destec, which help to control the automatiation projects, in the part of activities, production and purchases.
         </p>

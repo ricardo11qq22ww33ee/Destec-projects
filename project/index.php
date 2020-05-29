@@ -94,12 +94,12 @@
   <hr class="mb-4">
   <div class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="../production/index.php">Existing Parts</a>
-        <a class="p-2 text-muted" href="../production/addParts.php">Add Parts</a>
-        <a class="p-2 text-muted" href="../project/activitylist.php">On Going Activities</a>
-        <a class="p-2 text-muted" href="../project/addActivity.php">Add Activity</a>
-        <a class="p-2 text-muted" href="../purchases/purchasesList.php">Purchases</a>
-        <a class="p-2 text-muted" href="../purchases/addPurchases.php">Make a Purchase</a>
+        <a class="p-2 text-muted" href="../production/?id_project=<?php echo $id_project; ?>">Existing Parts</a>
+        <a class="p-2 text-muted" href="../production/addParts.php?id_project=<?php echo $id_project; ?>">Add Parts</a>
+        <a class="p-2 text-muted" href="../project/activitylist.php?id_project=<?php echo $id_project; ?>">On Going Activities</a>
+        <a class="p-2 text-muted" href="../project/addActivity.php?id_project=<?php echo $id_project; ?>">Add Activity</a>
+        <a class="p-2 text-muted" href="../purchases/purchasesList.php?id_project=<?php echo $id_project; ?>">Purchases</a>
+        <a class="p-2 text-muted" href="../purchases/addPurchases.php?id_project=<?php echo $id_project; ?>">Make a Purchase</a>
       </nav>
     </div>
   
