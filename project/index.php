@@ -15,7 +15,25 @@
 		header( "Location:../user/logout.php" );
 	}
 	//-----------------------------
-	
+  if(isset($_POST['delay'])){
+		if($_POST['delay']){
+  $activity = $_POST['id_activity'];
+			$text = $_POST['text'];
+			if( insertDelay($id_project, $id_activity, $text)){
+				echo'<script type="text/javascript">
+		alert("Retraso registrado '.$id_project.'");
+        </script>';
+        header("location:index.php?id_project=$id_project");
+			}else{
+                header("location:index.php?id_project='.$id_project.'");
+				echo'<script type="text/javascript">
+		alert("Retraso no registrado");
+		</script>';
+      }
+    }
+  }
+      
+
 	if(isset($_POST['actualizar'])){
 		if($_POST['actualizar']){
 			$activity = $_POST['id_activity'];

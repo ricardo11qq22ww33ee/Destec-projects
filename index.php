@@ -73,16 +73,11 @@
 
   <!-- Add your site or application content here -->
   <?php include("screens/sidebar.php") ?>
-  <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p>
-  
  <div class="container">
     <header class="blog-header py-3 line-separator">
       <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
-          <a class="text-muted" href="#">Projects</a>
-        </div>
         <div class="col-4 text-center">
-          <a class="blog-header-logo text-dark" href="index.php"> Hello <?php echo $name[0][0] ?></a>
+          <H1 class="blog-header-logo text-dark text-center" href="index.php"> Hello <?php echo $name[0][0] ?></h1>
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
           <a class="text-muted" href="#" aria-label="Plus">
@@ -128,6 +123,7 @@
         </div>
       </div>
     </div>
+    <?php echo getProjectCard(); ?>
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
