@@ -10,7 +10,7 @@
   $last_name = $_SESSION['last_name'];
 
   if($id_usuario == 0){		
-		header( "Location:../user/logout.php" );
+		header( "Location:user/logout.php" );
 	}
   //-----------------------------
   
