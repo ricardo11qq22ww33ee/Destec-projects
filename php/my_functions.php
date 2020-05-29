@@ -249,6 +249,34 @@
 		$html .= "</ul>";
 		return $html;
 	}
+	function getPartsList($id_project){
+		$sql = "SELECT * FROM parts WHERE id_project = $id_project";
+		$activities = sqlSelect($sql);
+
+		$html = "<ul class='list-group'>";
+		foreach( $activities as $activity ){
+			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$activity[1]."";
+			$html .= "<span class ='font-weight-bold'> ".$activity[7]." </span>";
+			$html .= "<form class='form-inline' method='Post' action='update.php?id_project=".$id_project."'>";
+			$html .= "<select class='form-group mr-sm-1' name='status'>";
+			$html .= "<option value='In-progress'>In-progress</option>";
+			$html .= "<option value='Done'>Done</option>";
+			$html .= "</select>";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_activity' id='id_activity' value=".$activity[0].">";
+			$html .= "<input type='submit' class='btn btn-primary name='actualizar' value='Actualizar'>";
+			$html .= "</form>";
+			$html .= "<form class='form-inline' method='Post' action='delay.php'>";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='text' name='text' id='text'>";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_activity' id='id_activity' value=".$activity[0].">";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$activity[6].">";
+			$html .= "<input type='submit' class='btn btn-danger name='delay' value='Retraso'>";
+			$html .= "</form>";
+			$html .= "</li>";
+			$html .= "  <hr class='mb-4'>";
+		}
+		$html .= "</ul>";
+		return $html;
+	}
 	
 
 	function getActivity($id_project){
