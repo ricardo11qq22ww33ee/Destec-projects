@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
   <link href="blog.css" rel="stylesheet">
   <link rel="stylesheet" href="./Destec-projects/css/ivm.css">
   <style>
@@ -62,7 +62,7 @@
           font-size: 3.5rem;
         }
       }
-  </style> 
+  </style>  
 </head>
 
 <body>
@@ -74,7 +74,7 @@
   <?php include("screens/sidebar.php") ?>
   <!-- <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p> -->
   
-  <div class="container">
+ <div class="container">
     <header class="blog-header py-3 line-separator">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-4 pt-1">
@@ -91,6 +91,16 @@
       </div>
     </header>
     <hr class="mb-4">
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">Algo</a>
+        <a class="p-2 text-muted" href="#">Algo2</a>
+        <a class="p-2 text-muted" href="#">Algo3</a>
+        <a class="p-2 text-muted" href="#">Algo4</a>
+        <a class="p-2 text-muted" href="#">Algo5</a>
+        <a class="p-2 text-muted" href="#">Algo6</a>
+      </nav>
+    </div>
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">Project On Going: *Insertar php para nombre del proyecto* </h1>
