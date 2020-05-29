@@ -108,9 +108,9 @@
   <h2 class="text-center"> Plan de trabajo de <?php $name = getNameProject($id_project); echo $name[0][0]; ?> </h2>
   <br>
   <div class="chart-wrapper">
-  <?php echo getWeeks($id_project); ?>
-  <?php echo getActivity($id_project); ?>
-</div>
+    <?php echo getWeeks($id_project); ?>
+    <?php echo getActivity($id_project); ?>
+  </div>
 </body>
 
 </html>
