@@ -70,7 +70,9 @@
 
   <!-- Add your site or application content here -->
   <?php include("../screens/sidebar-screen.php") ?>
-
+  <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark" href="index.php"> Hello <?php echo $name[0][0] ?></a>
+        </div>
   <hr class="mb-4">
   <div class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
