@@ -4,7 +4,7 @@
 	//$password = "DiR531";
 	$username = "root";
 	$password = "";
-	$dbname = "projects";
+	$dbname = "project";
 
 	function sqlSelect($sql){
 		
