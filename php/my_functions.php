@@ -149,14 +149,13 @@
 		$html .= "<div class='row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>";
         $html .= "<div class='col p-4 d-flex flex-column position-static'>";
 		foreach( $projects as $project ){
-		$html .= "<strong class='d-inline-block mb-2 text-primary'>".$project[3]."</strong>";
-          $html .= "<h3 class='mb-0'>Featured Releases</h3>";
-          $html .= "<div class='mb-1 text-muted'>*Insert date of release php*</div>";
-          $html .= "<p class='card-text mb-auto'>There was a step back in the Control ctegory.Important roadblock in a task.</p>";
-          $html .= "<a href='#' class='stretched-link'>Go to Control</a>";
+		$html .= "<strong class='d-inline-block mb-2 text-primary'>".$project[4]."</strong>";
+          $html .= "<h3 class='mb-0'>".$project[3]."</h3>";
+          $html .= "<p class='card-text mb-auto'>".$project[5]."</p>";
+          $html .= "<a href='project/?id_project=".$project[0]."' class='stretched-link'>Go to project</a>";
 		  $html .= "</div>";
         $html .= "<div class='col-auto d-none d-lg-block'>";
-		$html .= "<svg class='bd-placeholder-img' width='200' height='250' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Thumbnail'><title>Placeholder</title><rect width='100%' height='100%' fill='#55595c'></rect><text x='50%' y='50%' fill='#eceeef' dy='.3em'>Thumbnail</text></svg>";
+		$html .= "<svg class='bd-placeholder-img' width='200' height='250' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: ".$project[3]."'><title>".$project[3]."</title><rect width='100%' height='100%' fill='#55595c'></rect><text x='50%' y='50%' fill='#eceeef' dy='.3em'>".$project[3]."</text></svg>";
 			}  
 		$html .= "</div>";
 		$html .= "</div>";

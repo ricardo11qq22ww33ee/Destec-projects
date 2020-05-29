@@ -87,16 +87,6 @@
       </div>
     </header>
     <hr class="mb-4">
-    <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">Algo</a>
-        <a class="p-2 text-muted" href="#">Algo2</a>
-        <a class="p-2 text-muted" href="#">Algo3</a>
-        <a class="p-2 text-muted" href="#">Algo4</a>
-        <a class="p-2 text-muted" href="#">Algo5</a>
-        <a class="p-2 text-muted" href="#">Algo6</a>
-      </nav>
-    </div>
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">Project On Going: *Insertar php para nombre del proyecto* </h1>
@@ -109,35 +99,7 @@
       </div>
     </div>
     <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">*Actividad Control php*</strong>
-          <h3 class="mb-0">Featured Releases</h3>
-          <div class="mb-1 text-muted">*Insert date of release php*</div>
-          <p class="card-text mb-auto">There was a step back in the Control ctegory.Important roadblock in a task.</p>
-          <a href="#" class="stretched-link">Go to Control</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        </div>
-      </div>
-    </div>
     <?php echo getProjectCard(); ?>
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">*Actividad Design php*</strong>
-          <h3 class="mb-0">Featured Releases</h3>
-          <div class="mb-1 text-muted">*Insert date of release php*</div>
-          <p class="mb-auto">There was an update in the Design ctegory. We finished a main task.</p>
-          <a href="#" class="stretched-link">Go to Design</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        </div>
-      </div>
-    </div>
   </div>
 
 
