@@ -49,7 +49,15 @@
 </style>
 </head>
 <body class="body">
-
+<br><br><br><br>
+<header class="header-m">
+            <div style="text-align:center">
+                <img class="mb-4 top" src="https://image.flaticon.com/icons/svg/124/124118.svg" altwith="120" height="120">
+                <br>
+                <h1 class="h3 mb-3 font-weight-normal top">My Manager</h1>
+            </div> 
+        </header>
+<br><br><br>
 <p align="center"><?php if(isset($label)) {echo $label;} ?></p>
 <div style="margin: 0 auto; width: 200px; height: 150px; padding:30px;">
     <form id="form1" name="form1" method="post" action="login.php">

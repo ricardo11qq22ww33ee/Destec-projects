@@ -24,7 +24,7 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>MyManager</title>
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -73,6 +73,14 @@
   <!-- Add your site or application content here -->
   <?php include("screens/sidebar.php") ?>
   <!-- <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p> -->
+
+  <header class="header-m">
+            <div style="text-align:center">
+                <img class="mb-4 top" src="https://image.flaticon.com/icons/svg/124/124118.svg" altwith="120" height="120">
+                <br>
+                <h1 class="h3 mb-3 font-weight-normal top">My Manager</h1>
+            </div> 
+        </header>
   
  <div class="container">
     <header class="blog-header py-3 line-separator">
