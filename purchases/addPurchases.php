@@ -8,7 +8,7 @@
   $puesto = $_SESSION['puesto'];
   $name = $_SESSION['name'];
   $last_name = $_SESSION['last_name'];
-  $id_project = $_GET['id_project'];
+  // $id_project = $_GET['id_project'];
 
 	
 	if($id_usuario == 0){		
@@ -16,22 +16,7 @@
 	}
 	//-----------------------------
 	
-	if(isset($_POST['actualizar'])){
-		if($_POST['actualizar']){
-			$activity = $_POST['id_activity'];
-			$status = $_POST['status'];
-			if( updateStatusActivity($status, $activity)){
-				echo'<script type="text/javascript">
-		alert("Actividad actualizada");
-		</script>';
-			}else{
-				echo'<script type="text/javascript">
-		alert("Error al actualizar actividad");
-		</script>';
-			}
-			
-		}
-	}
+	
 
 ?>
 
@@ -63,7 +48,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
-<body class="container">
+<body>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -71,38 +56,39 @@
   <!-- Add your site or application content here -->
   <?php include("../screens/sidebar-screen.php") ?>
 
-  <!-- <hr class="mb-4">
-  <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="../production/index.php">Existing Parts</a>
-        <a class="p-2 text-muted" href="../production/addParts.php">Add Parts</a>
-        <a class="p-2 text-muted" href="../project/activitylist.php">On Going Activities</a>
-        <a class="p-2 text-muted" href="project/addActivity.php">Add Activity</a>
-        <a class="p-2 text-muted" href="purchases/purchasesList.php">Purchases</a>
-        <a class="p-2 text-muted" href="purchases/addPurchases.php">Make a Purchase</a>
-      </nav>
-    </div>
-  
-  <h1 class="text-center" > Estamos en la semana <?php echo date("W"); ?></h1>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Shoping Cart</h1>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Enter What Do You Wish To Purchase Below</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Insert the Name of the Object" value="" required="">
+            </div>
 
-  <h2 class="text-center"> Plan de trabajo de <?php $name = getNameProject($id_project); echo $name[0][0]; ?> </h2>
-  <br>
-  <div class="chart-wrapper">
-  <?php echo getWeeks($id_project); ?>
-  <?php echo getActivity($id_project); ?>
-</div> -->
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Cost</label>
+              <input type="text" class="form-control" id="lastName" placeholder="What is the cost?" value="" required="">
+            </div>
+          </div>
 
-<div>
-    <h3> Activades </h3>
-    <?php echo getActivityList($id_project); ?>
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>  
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Add Purchaise</button>
+        </form>
+      </div>
+      <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="535" height="225" style="display: block; width: 535px; height: 225px;"></canvas> 
+    </main> 
+
 </div>
-
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
