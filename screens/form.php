@@ -48,7 +48,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
-<body class="container">
+<body>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -58,38 +58,29 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Add project</h1>
+        <h1 class="text-center">Add project</h1>
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Enter The New Project Information Below</h4>
-        <form class="needs-validation" method="Post" action="" novalidate="">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Insert the name of the project" value="" >
-            </div>
-
-            <div class="col-md-6 mb-3">
-              <label for="lastName">Client</label>
-              <input type="text" class="form-control" id="client" placeholder="Name of the client" value="" name="client">
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-          <label for="titulo">Start date:</label>
-			  <input class="form-control mb-2 mr-sm-2"  type="date" name="start_date" id="fechainicio" value="">
-            </div>
-            <div class="col-md-6 mb-3">
-            <label for="titulo">Due date:</label>
-			  <input class="form-control mb-2 mr-sm-2"  type="date" name="due_date" id="fechafin" value="">
-              </div>
-          <hr class="mb-4">
-          <input class="btn btn-primary btn-lg btn-block" type="submit" name="newProject">
-        </form>
+      <form class='form-in-group' method='Post' action='insertProject.php'>
+      <label>Name</label>
+			<input class='form-control mb-2 mr-sm-2'  type='text' name='name' id='name' placeholder='Name of project'>
+      <label>Client</label>
+      <input class='form-control mb-2 mr-sm-2'  type='text' name='client' id='client' placeholder='Client'>
+      <label>Due date</label>
+      <input class='form-control mb-2 mr-sm-2'  type='date' name='due_date' id='due_date'>
+      <label>Start date</label>
+      <input class='form-control mb-2 mr-sm-2'  type='date' name='start_date' id='start_date'>
+      <label>Description</label>
+      <input class='form-control mb-2 mr-sm-2'  type='text' name='description' id='description' placeholder='Description'>
+			<input type='submit' class='btn btn-success name='delay' value='Retraso'>
+			</form>
       </div>
       <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="535" height="225" style="display: block; width: 535px; height: 225px;"></canvas> 
     </main> 
 
 </div>
+      
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

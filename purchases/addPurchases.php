@@ -9,7 +9,7 @@
   $name = $_SESSION['name'];
   $last_name = $_SESSION['last_name'];
   // $id_project = $_GET['id_project'];
-
+ $id_project = $_GET['id_project'];
 	
 	if($id_usuario == 0){		
 		header( "Location:../user/logout.php" );
@@ -62,17 +62,18 @@
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Enter What Do You Wish To Purchase Below</h4>
-        <form class="needs-validation" novalidate="">
+        <form class="needs-validation" action="insertPurchase.php" method="Post" novalidate="">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Insert the Name of the Object" value="" required="">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Insert the Name of the Object" value="" required="">
             </div>
 
             <div class="col-md-6 mb-3">
               <label for="lastName">Cost</label>
-              <input type="text" class="form-control" id="lastName" placeholder="What is the cost?" value="" required="">
+              <input type="text" class="form-control" id="cost" name="cost" placeholder="What is the cost?" value="" required="">
             </div>
+            <input  class="form-control" id="address2" name="id_project" type="hidden" value=<?php echo $id_project; ?>>
           </div>
 
           <hr class="mb-4">

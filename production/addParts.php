@@ -8,7 +8,7 @@
   $puesto = $_SESSION['puesto'];
   $name = $_SESSION['name'];
   $last_name = $_SESSION['last_name'];
-  // $id_project = $_GET['id_project'];
+  $id_project = $_GET['id_project'];
 
 	
 	if($id_usuario == 0){		
@@ -62,34 +62,36 @@
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Enter The New Part Information Below</h4>
-        <form class="needs-validation" novalidate="">
+        <form class="needs-validation" novalidate="" method= "post" action="insertPart.php">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">ID Part</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Insert your Part Id" value="" required="">
+              <input type="text" class="form-control" id="firstName" name="id_part" placeholder="Insert your Part Id" value="" required="">
             </div>
 
             <div class="col-md-6 mb-3">
               <label for="lastName">Designer</label>
-              <input type="text" class="form-control" id="lastName" placeholder="Name of the Designer" value="" required="">
+              <input type="text" class="form-control" id="lastName" placeholder="Name of the Designer"name="name_designer" value="" required="">
             </div>
           </div>
 
           <div class="mb-3">
             <label for="email">Material<span class="text-muted"></span></label>
-            <input type="email" class="form-control" id="email" placeholder="Material of the Part">
+            <input type="email" class="form-control" id="email" name="material" placeholder="Material of the Part">
           </div>
 
           <div class="mb-3">
             <label for="address">Cut</label>
-            <input type="text" class="form-control" id="address" placeholder="What is the type of the Cut" required="">
+            <input type="text" class="form-control" id="address" name="cut" placeholder="What is the type of the Cut" required="">
           </div>
 
           <div class="mb-3">
             <label for="address2">Machining<span class="text-muted"></span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Insert the Process">
+            <input type="text" class="form-control" id="address2" name="machining" placeholder="Insert the Process">
           </div>
-
+          <input  class="form-control" id="address2" name="id_project"type="hidden" value=<?php echo $id_project; ?>>
+          <input  class="form-control" id="address2" name="status" type="hidden" value="Incomplete">
+          <input  class="form-control" id="address2" name="status_cut" type="hidden" value="Incomplete">
           <hr class="mb-4">
           <button class="btn btn-primary btn-lg btn-block" type="submit">Add Part</button>
         </form>

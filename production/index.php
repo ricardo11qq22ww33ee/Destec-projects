@@ -70,7 +70,18 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <h1 class="text-center"> Parts of project</h1>
+  <header class="blog-header py-3 line-separator">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 text-center">
+          <H1 class="blog-header-logo text-dark text-center">Purchase list of project </h1>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="text-muted" href="addParts.php?id_project=<?php echo $id_project; ?>" aria-label="Plus">
+            <img class="mb-4" src="https://image.flaticon.com/icons/svg/1828/1828930.svg" width="20" height="20" fill="none" stroke="currentColor">
+          </a>
+        </div>
+      </div>
+    </header>
   <hr class="mb-4">
   <?php include("../screens/sidebar-screen.php") ?>
 <?php echo getPartsList($id_project); ?>

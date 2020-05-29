@@ -45,6 +45,27 @@
 		//echo $sql;
 		return sqlInsert($sql);
 	}
+	function insertPart($id_part, $material, $cut, $machining, $status, $status_cut, $id_project, $name_designer){
+		$sql = "INSERT INTO parts (id_part, material, cut, machining, status,  status_cut, id_project, name_designer) VALUES ('".$id_part."','".$material."','".$cut."', '".$machining."', '".$status."', '".$status_cut."','".$id_project."','".$name_designer."')";
+		//echo $sql;
+		return sqlInsert($sql);
+	}
+	function insertActivity($due_date, $start_date, $name, $id_project, $status){
+		$sql = "INSERT INTO activity (due_date, start_date, name, id_project, status) VALUES ('".$due_date."', '".$start_date."', '".$name."','".$id_project."',  '".$status."')";
+		//echo $sql;
+		return sqlInsert($sql);
+	}
+	function insertProject($due_date, $start_date, $name, $client, $description){
+		$sql = "INSERT INTO project (due_date, start_date, name, client, description) VALUES ('".$due_date."', '".$start_date."', '".$name."','".$client."',  '".$description."')";
+		//echo $sql;
+		return sqlInsert($sql);
+	}
+	function insertPurchase($name, $cost, $id_project){
+		$status = "Requiere";
+		$sql = "INSERT INTO purchases (name, cost, id_project, status) VALUES ('".$name."', '".$cost."', '".$id_project."', '".$status."')";
+		//echo $sql;
+		return sqlInsert($sql);
+	}
 	function insertVendedor($id_usser, $comision, $nombre){
 		$puesto = "Vendedor";
 		$sql = "INSERT INTO vendedores (id_usuario, nombre, comision) VALUES ('".$id_usser."','".$nombre."','".$comision."')";
@@ -56,7 +77,23 @@
 		$sql = "UPDATE activity SET status = '".$status."' WHERE id_activity = '".$id_activity."' "; 
 		return sqlInsert($sql);
 }
-		
+	function updateCut($id_part){
+		$status = "Complete";
+	$sql = "UPDATE parts SET status_cut = '".$status."' WHERE id_part = '".$id_part."' "; 
+	return sqlInsert($sql);
+	}
+
+	function updatePurchase($id_purchase){
+		$status = "Done";
+	$sql = "UPDATE purchases SET status = '".$status."' WHERE id_purchase = '".$id_purchase."' "; 
+	return sqlInsert($sql);
+	}
+
+	function updateStatus($id_part){
+		$status = "Complete";
+	$sql = "UPDATE parts SET status = '".$status."' WHERE id_part = '".$id_part."' "; 
+	return sqlInsert($sql);
+	}
 	//Funcion para buscar un libro con algun termino de busquedas
 
 
@@ -107,10 +144,6 @@
 		
 	}
 
-	function getComision($id_usser){
-		$sql = "SELECT comision FROM vendedores WHERE id_usuario = '$id_usser' ";
-			return sqlSelect($sql);
-	}
 
 	function getProjectListScreen(){
 		$sql = "SELECT id_project FROM project";
@@ -144,11 +177,12 @@
 	function getProjectCard(){
 		$sql = "SELECT * FROM project";
 		$projects = sqlSelect($sql);
-
+		
 		$html = "<div class='col-md-6'>";
+		foreach( $projects as $project ){
 		$html .= "<div class='row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative'>";
         $html .= "<div class='col p-4 d-flex flex-column position-static'>";
-		foreach( $projects as $project ){
+	
 		$html .= "<strong class='d-inline-block mb-2 text-primary'>".$project[4]."</strong>";
           $html .= "<h3 class='mb-0'>".$project[3]."</h3>";
           $html .= "<p class='card-text mb-auto'>".$project[5]."</p>";
@@ -156,11 +190,12 @@
 		  $html .= "</div>";
         $html .= "<div class='col-auto d-none d-lg-block'>";
 		$html .= "<svg class='bd-placeholder-img' width='200' height='250' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: ".$project[3]."'><title>".$project[3]."</title><rect width='100%' height='100%' fill='#55595c'></rect><text x='50%' y='50%' fill='#eceeef' dy='.3em'>".$project[3]."</text></svg>";
-			}  
+		
 		$html .= "</div>";
 		$html .= "</div>";
+		}
 		$html .= "</div>";
-	
+		
 		
 		
 		return $html;
@@ -229,7 +264,7 @@
 		$html = "<ul class='list-group'>";
 		foreach( $activities as $activity ){
 			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$activity[1]."";
-			$html .= "<span class ='font-weight-bold'> ".$activity[7]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$activity[5]." </span>";
 			$html .= "<form class='form-inline' method='Post' action='update.php?id_project=".$id_project."'>";
 			$html .= "<select class='form-group mr-sm-1' name='status'>";
 			$html .= "<option value='In-progress'>In-progress</option>";
@@ -241,7 +276,7 @@
 			$html .= "<form class='form-inline' method='Post' action='delay.php'>";
 			$html .= " <input class='form-control mb-2 mr-sm-2'  type='text' name='text' id='text'>";
 			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_activity' id='id_activity' value=".$activity[0].">";
-			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$activity[6].">";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$activity[4].">";
 			$html .= "<input type='submit' class='btn btn-danger name='delay' value='Retraso'>";
 			$html .= "</form>";
 			$html .= "</li>";
@@ -249,28 +284,97 @@
 		$html .= "</ul>";
 		return $html;
 	}
-	function getPartsList($id_project){
-		$sql = "SELECT * FROM parts WHERE id_project = $id_project";
-		$activities = sqlSelect($sql);
+	function getPurchaseGeneral(){
+		$sql = "SELECT * FROM purchases";
+		$purchases = sqlSelect($sql);
 
 		$html = "<ul class='list-group'>";
-		foreach( $activities as $activity ){
-			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$activity[1]."";
-			$html .= "<span class ='font-weight-bold'> ".$activity[7]." </span>";
-			$html .= "<form class='form-inline' method='Post' action='update.php?id_project=".$id_project."'>";
-			$html .= "<select class='form-group mr-sm-1' name='status'>";
-			$html .= "<option value='In-progress'>In-progress</option>";
-			$html .= "<option value='Done'>Done</option>";
-			$html .= "</select>";
-			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_activity' id='id_activity' value=".$activity[0].">";
+		foreach( $purchases as $purchase ){
+			$name = getNameProject($purchase[2]);
+			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$purchase[1]."";
+			$html .= "<span class ='font-weight-bold'> $".$purchase[3].".00 </span>";
+			$html .= "<span class ='font-weight-bold'> ".$purchase[4]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$name[0][0]." </span>";
+			$html .= "</li>";
+			$html .= "  <hr class='mb-4'>";
+		}
+		$html .= "</ul>";
+		return $html;
+	}
+	function getPurchaseList($id_project){
+		$sql = "SELECT * FROM purchases WHERE id_project = $id_project";
+		$purchases = sqlSelect($sql);
+
+		$html = "<ul class='list-group'>";
+		foreach( $purchases as $purchase ){
+			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$purchase[1]."";
+			$html .= "<span class ='font-weight-bold'> $".$purchase[3].".00 </span>";
+			$html .= "<span class ='font-weight-bold'> ".$purchase[4]." </span>";
+			if($purchase[4] == 'Done'){
+				
+			}
+			else{
+				$html .= "<form class='form-inline' method='Post' action='updatePurchase.php'>";
+				$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_purchase' id='id_purchase' value=".$purchase[0].">";
+				$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$purchase[2].">";
+				$html .= "<input type='submit' class='btn btn-primary name='actualizar' value='Actualizar'>";
+				$html .= "</form>";
+			}
+			$html .= "</li>";
+			$html .= "  <hr class='mb-4'>";
+		}
+		$html .= "</ul>";
+		return $html;
+	}
+	function getPartsGeneral(){
+		$sql = "SELECT * FROM parts";
+		$parts = sqlSelect($sql);
+
+		$html = "<ul class='list-group'>";
+		foreach( $parts as $part ){
+			$name = getNameProject($part[6]);
+			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$part[0]."";
+			$html .= "<span class ='font-weight-bold'> ".$part[1]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$part[2]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$part[5]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$part[4]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$name[0][0]." </span>";
+			$html .= "</li>";
+			$html .= "  <hr class='mb-4'>";
+		}
+		$html .= "</ul>";
+		return $html;
+	}
+	function getPartsList($id_project){
+		$sql = "SELECT * FROM parts WHERE id_project = $id_project";
+		$parts = sqlSelect($sql);
+
+		$html = "<ul class='list-group'>";
+		foreach( $parts as $part ){
+			$html .= "<li class='list-group-item d-flex justify-content-between align-items-center'> ".$part[0]."";
+			$html .= "<span class ='font-weight-bold'> ".$part[1]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$part[2]." </span>";
+			$html .= "<span class ='font-weight-bold'> ".$part[5]." </span>";
+			if($part[5] == "Complete"){
+
+			}else{
+				$html .= "<form class='form-inline' method='Post' action='updateCut.php'>";
+				$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$part[6].">";
+				$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_part' id='id_part' value=".$part[0].">";
+				$html .= "<input type='submit' class='btn btn-primary name='actualizar' value='Actualizar'>";
+				$html .= "</form>";
+			}
+			
+			$html .= "<span class ='font-weight-bold'> ".$part[4]." </span>";
+			if($part[4] == "Complete"){
+
+			}else{
+			$html .= "<form class='form-inline' method='Post' action='updateStatus.php'>";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$part[6].">";
+			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_part' id='id_part' value=".$part[0].">";
 			$html .= "<input type='submit' class='btn btn-primary name='actualizar' value='Actualizar'>";
 			$html .= "</form>";
-			$html .= "<form class='form-inline' method='Post' action='delay.php'>";
-			$html .= " <input class='form-control mb-2 mr-sm-2'  type='text' name='text' id='text'>";
-			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_activity' id='id_activity' value=".$activity[0].">";
-			$html .= " <input class='form-control mb-2 mr-sm-2'  type='hidden' name='id_project' id='id_project' value=".$activity[6].">";
-			$html .= "<input type='submit' class='btn btn-danger name='delay' value='Retraso'>";
-			$html .= "</form>";
+			}
 			$html .= "</li>";
 			$html .= "  <hr class='mb-4'>";
 		}
@@ -284,13 +388,13 @@
 		$data = sqlSelect($sql);
 		$html = "<ul class='chart-bars'>";
 		foreach( $data as $value ){
-			if($value[7] == 'Done'){
+			if($value[5] == 'Done'){
 				$color = "#00AD43";
 			}
-			if($value[7] == 'In-progress'){
+			if($value[5] == 'In-progress'){
 				$color = "#FEDF00";
 			}
-			if($value[7] == 'No initiated'){
+			if($value[5] == 'No initiated'){
 				$color = "#ED2939";
 			}
 			$sql = "SELECT WEEKOFYEAR(due_date) FROM activity WHERE id_activity = $value[0]";
@@ -322,235 +426,5 @@
 		$name = sqlSelect($sql);
 		return $name;
 	}
-	function getClientes($sTableName, $sClass){
-		$sql = "SELECT * FROM ".$sTableName;
-		
-		$selectData = sqlSelect($sql);
-		
-		$html = "<select class='".$sClass."' name='".$sTableName."'>";
-		
-		foreach( $selectData as $option ){
-			$html .= "<option value='".$option[1]."'>".$option[2]."</option>";
-		}
-		
-		$html .= "</select>";
-		
-		return $html;
-	}
-
-	function showTable($res){
-		
-		if( count($res) > 0 ){
-			$html = "<table class='table'>";
-
-			//Genera primer fila de encabezados en tabla
-			$keys = array_keys($res[0]);
-			$html .= "<tr>";
-
-			foreach($keys as $key){
-				if ($key == "id_ventas"){
-
-				}				
-				else{
-
-					if( is_string ( $key )){
-						if ($key == "id_usuario"){
-							$html .= "<th>VENDEDOR</th>";
-						}
-						else{
-							$html .= "<th>".strtoupper($key)."</th>";
-						}	
-						
-					}
-				}
-				
-			}
-
-			$html .= "</tr>";
-			//--------------------------------------
-
-			//Genera filas de datos en tabla
-			foreach($res as $row) {
-				$html .= "<tr>";
-
-				foreach($row as $key=>$valor){
-					if ($key == "id_ventas"){
-						$id_ventas = $valor;
-					}
-					else{
-						if ($key == "empresa"){
-							if( is_string ( $key )){
-								$empresa = getEmpresa($valor);
-							$empresa = $empresa[0][0];
-							$html .= "<td>".$empresa."</td>";
-							}
-							
-						}
-						else{
-							if ($key == "id_usuario"){
-								if( is_string ( $key )){
-									$empresa = getVendedor($valor);
-								$empresa = $empresa[0][0];
-								$html .= "<td>".$empresa."</td>";
-								}
-							}
-							else{
-								if ($key == "cliente"){
-									if( is_string ( $key )){
-										$cliente = getCliente($valor);
-									$cliente = $cliente[0][0];
-									$html .= "<td>".$cliente."</td>";
-									}
-								}
-								else{
-									if($key == 'validada'){
-										$sino =  getSelectValidacion($id_ventas);
-										$html.= "<td>".$sino."</td>";
-									}
-									else{
-										if( is_string ( $key )){
-											$html .= "<td>".$valor."</td>";
-										}
-									}
-									
-								}
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-
-				$html .= "</tr>";			
-			}
-			//-------------------------------------
-
-			$html .= "</table>";
-		}else{
-			$html = "<p>No hay registros encontrados...</p>";
-		}
-		
-		return $html;
-	}
-
-	function showTable2($res){
-		
-		if( count($res) > 0 ){
-			$html = "<table class='table'>";
-
-			//Genera primer fila de encabezados en tabla
-			$keys = array_keys($res[0]);
-			$html .= "<tr>";
-
-			foreach($keys as $key){
-				if (($key == "id_ventas") ||  ($key == "id_usuario")){
-				}				
-				else{
-
-					if( is_string ( $key )){
-						if ($key == "id_usuario"){
-							$html .= "<th>VENDEDOR</th>";
-						}
-						else{
-							$html .= "<th>".strtoupper($key)."</th>";
-						}	
-						
-					}
-				}
-				
-			}
-
-			$html .= "</tr>";
-			//--------------------------------------
-			$monto = 0;
-			$montoComision = 0;
-			$acesso = 'no';
-			//Genera filas de datos en tabla
-			foreach($res as $row) {
-				$html .= "<tr>";
-
-				foreach($row as $key=>$valor){
-					
-					if (($key == "id_ventas") ||  ($key == "id_usuario")){
-					}
-
-					
-					else{
-						if ($key == "empresa"){
-							if( is_string ( $key )){
-								$empresa = getEmpresa($valor);
-							$empresa = $empresa[0][0];
-							$html .= "<td>".$empresa."</td>";
-							}
-						}
-
-						else{
-							if ($key == "id_usuario"){
-								if( is_string ( $key )){
-								$vendedor = getVendedor($valor);
-								$vendedor = $vendedor[0][0];
-								$html .= "<td>".$vendedor."</td>";
-								}
-							}
-							else{
-								if ($key == "cliente"){
-									if( is_string ( $key )){
-										$cliente = getCliente($valor);
-									$cliente = $cliente[0][0];
-									$html .= "<td>".$cliente."</td>";
-									}
-								}
-								else{
-									if ($key == "monto"){
-										$monto = $valor + $monto;
-										$comision = $valor;
-										}
-									if ($key == "validada"){
-										if ($valor == "Si"){
-											$acesso = 'si';
-											}
-										}
-									if ($key == "comision"){
-										if($acesso == 'si'){
-										$comision = $comision * ($valor/100);
-										$montoComision = $comision + $montoComision;
-										$acesso = 'no';
-										$comision = 0;
-										}
-									}
-										if( is_string ( $key )){
-											$html .= "<td>".$valor."</td>";
-									}
-									
-								}
-								
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-
-				$html .= "</tr>";
-			}
-			$html .= "<tr>";
-			$html .= "<td></td><td></td><td></td><td>total de ventas:</td><td>".$monto."</td><td>total de ventas con comision:</td><td>".$montoComision."</td>";
-			$html .= "</tr>";
-				$html.="<br>";
-			//-------------------------------------
-
-
-			$html .= "</table>";
-			
-		}
-		else{
-			$html = "<p>No hay registros encontrados...</p>";
-		}
-		
-		return $html;
-	}
-?>
+	
+	

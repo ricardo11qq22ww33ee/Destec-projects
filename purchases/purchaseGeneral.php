@@ -10,13 +10,28 @@
   $last_name = $_SESSION['last_name'];
   // $id_project = $_GET['id_project'];
 
-	$id_project = $_GET['id_project'];
+	
 	if($id_usuario == 0){		
 		header( "Location:../user/logout.php" );
 	}
 	//-----------------------------
 	
-	
+	if(isset($_POST['actualizar'])){
+		if($_POST['actualizar']){
+			$activity = $_POST['id_activity'];
+			$status = $_POST['status'];
+			if( updateStatusActivity($status, $activity)){
+				echo'<script type="text/javascript">
+		alert("Actividad actualizada");
+		</script>';
+			}else{
+				echo'<script type="text/javascript">
+		alert("Error al actualizar actividad");
+		</script>';
+			}
+			
+		}
+	}
 
 ?>
 
@@ -48,36 +63,16 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="container">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
   <!-- Add your site or application content here -->
+  <h1 class="text-center text-dark"> General List of parts </h1>
+  <hr class="mb-4">
   <?php include("../screens/sidebar-screen.php") ?>
-
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="text-center">Add activity</h1>
-      </div>
-      <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Enter The New Activity Information Below</h4>
-      <form class='form-in-group' method='Post' action='insertActivity.php'>
-      <label>Name</label>
-			<input class='form-control mb-2 mr-sm-2'  type='text' name='name' id='name' placeholder='Name of activity'>
-      <label>Due date</label>
-      <input class='form-control mb-2 mr-sm-2'  type='date' name='due_date' id='due_date'>
-      <label>Start date</label>
-      <input class='form-control mb-2 mr-sm-2'  type='date' name='start_date' id='start_date'>
-      <input  class="form-control" id="address2" name="id_project"type="hidden" value=<?php echo $id_project; ?>>
-			<input type='submit' class='btn btn-success' name='activity' value='Add activity'>
-			</form>
-      </div>
-      <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="535" height="225" style="display: block; width: 535px; height: 225px;"></canvas> 
-    </main> 
-
-</div>
-      
+<?php echo getPurchaseGeneral(); ?>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

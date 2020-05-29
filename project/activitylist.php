@@ -93,7 +93,18 @@
 </div> -->
 
 <div>
-    <h3 class="text-center"> Activities </h3>
+<header class="blog-header py-3 line-separator">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 text-center">
+          <H1 class="blog-header-logo text-dark text-center">Activities list of project </h1>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="text-muted" href="addActivity.php?id_project=<?php echo $id_project; ?>" aria-label="Plus">
+            <img class="mb-4" src="https://image.flaticon.com/icons/svg/1828/1828930.svg" width="20" height="20" fill="none" stroke="currentColor">
+          </a>
+        </div>
+      </div>
+    </header>
     <?php echo getActivityList($id_project); ?>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
