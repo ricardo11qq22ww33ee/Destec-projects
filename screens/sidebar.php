@@ -74,16 +74,6 @@ echo
               echo getPurchasesList();
             echo '</div>
           </li>
-          <li class="header-menu">
-            <span>Admin</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-book"></i>
-              <span>Settings</span>
-            </a>
-          </li>
-         
         </ul>
       </div>
       <!-- sidebar-menu  -->

@@ -74,16 +74,6 @@ echo
               echo getPurchasesListScreen();
             echo'</div>
           </li>
-
-          <li class="header-menu">
-            <span>Admin</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-cog"></i>
-              <span>Settings</span>
-            </a>
-          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->

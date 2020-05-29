@@ -185,7 +185,7 @@
 	
 		$html .= "<strong class='d-inline-block mb-2 text-primary'>".$project[4]."</strong>";
           $html .= "<h3 class='mb-0'>".$project[3]."</h3>";
-          $html .= "<p class='card-text mb-auto'>".$project[5]."</p>";
+          $html .= "<p class='card-text mb-auto'>".$project[4]."</p>";
           $html .= "<a href='project/?id_project=".$project[0]."' class='stretched-link'>Go to project</a>";
 		  $html .= "</div>";
         $html .= "<div class='col-auto d-none d-lg-block'>";

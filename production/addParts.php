@@ -48,7 +48,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="container" style="background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.argylechurch.org%2Fwp-content%2Fuploads%2F2015%2F09%2Fwhite-triangles.jpg&f=1&nofb=1);background-size: cover;">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
