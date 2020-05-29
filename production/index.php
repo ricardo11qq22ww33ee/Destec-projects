@@ -1,4 +1,4 @@
-<?php
+?php
 	include("../php/db_manager.php");
 	include("../php/my_functions.php");
 	
@@ -76,11 +76,6 @@
           </div>
 
           <div class="mb-3">
-            <label for="address2">Id Project <span class="text-muted"></span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Insert Valid Project">
-          </div>
-
-          <div class="mb-3">
             <label for="email">Material<span class="text-muted"></span></label>
             <input type="email" class="form-control" id="email" placeholder="Material of the Part">
           </div>
@@ -93,16 +88,6 @@
           <div class="mb-3">
             <label for="address2">Machining<span class="text-muted"></span></label>
             <input type="text" class="form-control" id="address2" placeholder="Insert the Process">
-          </div>
-
-          <div class="mb-3">
-            <label for="address2">Status<span class="text-muted"></span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Status of your Part">
-          </div>
-
-          <div class="mb-3">
-            <label for="address2">Status Cut<span class="text-muted"></span></label>
-            <input type="text" class="form-control" id="address2" placeholder="">
           </div>
 
           <hr class="mb-4">
