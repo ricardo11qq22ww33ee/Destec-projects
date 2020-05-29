@@ -88,6 +88,18 @@
 
   <!-- Add your site or application content here -->
   <?php include("../screens/sidebar-screen.php") ?>
+
+  <hr class="mb-4">
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">Algo</a>
+        <a class="p-2 text-muted" href="#">Algo2</a>
+        <a class="p-2 text-muted" href="#">Algo3</a>
+        <a class="p-2 text-muted" href="#">Algo4</a>
+        <a class="p-2 text-muted" href="#">Algo5</a>
+        <a class="p-2 text-muted" href="#">Algo6</a>
+      </nav>
+    </div>
   
   <h1 class="text-center" > Estamos en la semana <?php echo date("W"); ?></h1>
 

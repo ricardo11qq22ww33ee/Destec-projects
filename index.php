@@ -9,14 +9,11 @@
   $name = $_SESSION['name'];
   $last_name = $_SESSION['last_name'];
 
-	
-	if($id_usuario == 0){		
-		header( "Location:user/logout.php" );
+  if($id_usuario == 0){		
+		header( "Location:../user/logout.php" );
 	}
-	//-----------------------------
-	
-	
-
+  //-----------------------------
+  
 ?>
 
 <!doctype html>
@@ -35,8 +32,10 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -73,6 +72,8 @@
 
   <!-- Add your site or application content here -->
   <?php include("screens/sidebar.php") ?>
+  <!-- <p>Hello world! This is HTML5 Boilerplate. <?php echo $last_name[0][0] ?> </p> -->
+  
  <div class="container">
     <header class="blog-header py-3 line-separator">
       <div class="row flex-nowrap justify-content-between align-items-center">
@@ -101,7 +102,6 @@
     <div class="row mb-2">
     <?php echo getProjectCard(); ?>
   </div>
-
 
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
